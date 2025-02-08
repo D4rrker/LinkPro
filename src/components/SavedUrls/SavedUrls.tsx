@@ -51,7 +51,7 @@ export default function SavedUrls() {
                   </div>
                 </div>
                 <p className="text-xs text-gray-500 mt-2">
-                  Creado el {url.createdAt.toLocaleDateString()}
+                  Creado el {new Date(url.createdAt).toLocaleDateString()}
                 </p>
               </li>
             ))}
