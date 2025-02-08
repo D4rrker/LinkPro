@@ -38,14 +38,13 @@ export const getOriginalUrl = async (urlParam: string) => {
   redirect(data.original_url);
 };
 
-export const fakeFetch = async (eve: React.FormEvent) => {
-  eve.preventDefault();
-  const shortId = generateFakeShortId();
+export const fakeFetch = async () => {
+  const short_id = generateFakeShortId();
 
   const fakefetch = new Promise((resolve) => {
     setTimeout(() => {
-      resolve({ data: "Respuesta simulada", shortId, status: 200 });
-    }, 1000);
+      resolve({ data: "Respuesta simulada", short_id, status: 200 });
+    }, 500);
   });
 
   return fakefetch;

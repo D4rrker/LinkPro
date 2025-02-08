@@ -13,8 +13,6 @@ export default function SavedUrls() {
 
   if (savedUrls.length === 0) return;
 
-  console.log(savedUrls);
-
   return (
     <div className="mt-24 p-6 rounded-md shadow-lg border bg-gray-800 border-gray-700">
       <h2 className="text-3xl font-bold mb-4">URLs Guardadas</h2>
