@@ -22,6 +22,11 @@ export const shortenUrl = async (url: string) => {
 };
 
 export const getOriginalUrl = async (urlParam: string) => {
+
+  if (urlParam === "favicon.ico") return;
+
+  if (urlParam === "robots.txt") return;
+
   if (urlParam.length < 8) {
     console.error("❌ Parámetro no válido.");
     notFound();
@@ -30,6 +35,9 @@ export const getOriginalUrl = async (urlParam: string) => {
   const URL = `http://localhost:1234/${urlParam}`;
 
   const res = await fetch(URL);
+
+  console.log(res);
+  
 
   if (!res.ok) notFound();
 
