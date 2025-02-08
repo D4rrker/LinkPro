@@ -1,11 +1,11 @@
 import { getOriginalUrl } from "@/services/fetchServices";
 
-export default async function ShortUrlPage({
-  params,
-}: {
-  params: { shortId: string };
-}) {
+type tParams = Promise<{ shortId: string }>;
+
+export default async function ShortUrlPage({ params }: { params: tParams }) {
   // Este await aparece como que no es necesario, pero sí tiene efecto.
-  const { shortId } = params;
+  const { shortId }: { shortId: string } = await params;
   await getOriginalUrl(shortId);
+
+  return null;
 }
