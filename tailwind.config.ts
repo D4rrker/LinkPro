@@ -12,6 +12,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      gridTemplateRows: {
+        "main-structure": "auto 1fr auto",
+      },
     },
   },
   plugins: [],
