@@ -66,6 +66,7 @@ export const handleSubmit = async ({
     setErrorMSG({
       boolean: true,
       msg: data,
+      isError: false,
     });
   } catch (error) {
     console.error("❌ Error en handleSubmit:", error);

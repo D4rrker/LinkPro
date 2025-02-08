@@ -7,6 +7,8 @@ export default function Form({
   isLoading,
   errorMSG,
 }: FormPropsType) {
+  console.log(errorMSG.isError);
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4" id="form">
       <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
@@ -30,11 +32,11 @@ export default function Form({
         <button
           type="submit"
           className={`px-4 py-2 min-w-max h-min rounded-md border border-transparent font-semibold bg-purple-600  text-white ${
-            isLoading || errorMSG.boolean
+            isLoading || errorMSG.isError
               ? "cursor-not-allowed opacity-75"
               : "hover:bg-purple-700"
           }`}
-          disabled={isLoading || errorMSG.boolean}
+          disabled={isLoading || errorMSG.isError}
         >
           {isLoading ? "Acortando..." : "Acortar URL"}
         </button>
