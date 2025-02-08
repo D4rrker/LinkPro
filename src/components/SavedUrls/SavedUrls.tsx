@@ -3,7 +3,7 @@
 import { useSavedUrls } from "@/context/UrlsContext";
 import { Copy, Trash2 } from "lucide-react";
 import Link from "next/link";
-import Button from "./ui/Button";
+import Button from "../ui/Button";
 import { copyToClipboard } from "@/lib/formHandlers";
 import { useToast } from "@/context/ToastContext";
 

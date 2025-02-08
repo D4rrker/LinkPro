@@ -1,6 +1,6 @@
-import Features from "@/components/Features";
-import SavedUrls from "@/components/SavedUrls";
-import UrlShortenerForm from "@/components/UrlShortenerForm";
+import Features from "@/components/Features/Features";
+import SavedUrls from "@/components/SavedUrls/SavedUrls";
+import UrlShortenerForm from "@/components/Form/UrlShortenerForm";
 
 export default function Home() {
   return (

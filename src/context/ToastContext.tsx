@@ -11,7 +11,7 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
   const showToast = (
     message: string,
     type: "success" | "error" | "info",
-    copyShortUrl?: string
+    copyShortUrl?: string,
   ) => {
     setToast({ message, type, copyShortUrl });
     setTimeout(() => setToast(null), 8000);

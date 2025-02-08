@@ -9,7 +9,7 @@ export interface ToastContextType {
   showToast: (
     message: string,
     type: "success" | "error" | "info",
-    copyShortUrl?: string
+    copyShortUrl?: string,
   ) => void;
   hideToast: () => void;
 }

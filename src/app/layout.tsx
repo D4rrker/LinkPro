@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 import { ToastProvider } from "@/context/ToastContext";
-import Toast from "@/components/Toast";
+import Toast from "@/components/common/Toast";
 import { SavedUrlsProvider } from "@/context/UrlsContext";
 
 export const metadata: Metadata = {

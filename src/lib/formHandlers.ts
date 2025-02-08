@@ -12,14 +12,14 @@ export const copyToClipboard = ({
   showToast: (
     message: string,
     type: "success" | "error" | "info",
-    copyShortUrl: string
+    copyShortUrl: string,
   ) => void;
 }) => {
   navigator.clipboard.writeText(shortUrl);
   showToast(
     `Se ha copiado la siguiente URL al portapapeles:`,
     "success",
-    `${shortUrl}`
+    `${shortUrl}`,
   );
 };
 
@@ -40,13 +40,13 @@ export const handleSubmit = async ({
 
   try {
     const response = await shortenUrl(url);
-    const validation = await validateResponse(response)
+    const validation = await validateResponse(response);
 
     if (validation === "rate_limit") {
-      await handleRateLimitError(response, setErrorMSG)
+      await handleRateLimitError(response, setErrorMSG);
     }
 
-    const { short_id} = validation
+    const { short_id } = validation;
     const shortUrl = `http://localhost:3000/${short_id}`;
 
     setShortUrl(shortUrl);
@@ -69,6 +69,6 @@ export const handleSubmit = async ({
 };
 
 export const generateFakeShortId = () => {
-  const shortId = crypto.randomUUID().slice(0,8)
-  return shortId
-}
+  const shortId = crypto.randomUUID().slice(0, 8);
+  return shortId;
+};

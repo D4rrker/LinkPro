@@ -4,7 +4,9 @@ export const validateResponse = async (response: Response) => {
   if (response.status === 429) return "rate_limit";
 
   if (!response.ok) {
-    throw new Error(`Error en la respuesta del servidor: ${response.statusText}`);
+    throw new Error(
+      `Error en la respuesta del servidor: ${response.statusText}`,
+    );
   }
 
   return response.json();

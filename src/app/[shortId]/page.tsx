@@ -1,4 +1,4 @@
-import { getOriginalUrl  } from "@/services/fetchServices";
+import { getOriginalUrl } from "@/services/fetchServices";
 
 export default async function ShortUrlPage({
   params,
