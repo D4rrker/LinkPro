@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Error from "@/components/ui/Error";
 
 export default function ErrorPage({
   error,
