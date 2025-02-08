@@ -21,6 +21,8 @@ export default function Button({
         !takeBoolean ? "hover:bg-purple-400 hover:text-gray-900" : "opacity-30"
       }`}
       disabled={takeBoolean}
+      aria-label={`${buttonID !== "copy" ? "Eliminar" : "Copiar"} esta URL`}
+      title={`${buttonID !== "copy" ? "Eliminar" : "Copiar"}`}
     >
       <ItemSVG className="h-6 w-6 md:h-4 md:w-4" />
     </button>

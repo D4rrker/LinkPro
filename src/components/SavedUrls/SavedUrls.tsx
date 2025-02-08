@@ -23,13 +23,13 @@ export default function SavedUrls() {
               <li key={index} className="bg-gray-700 p-4 rounded-md">
                 <div className="flex flex-col gap-y-8 sm:justify-between sm:items-center sm:flex-row">
                   <div>
-                    <p className="text-sm text-gray-300 truncate w-60 md:w-96">
+                    <p className="text-base text-gray-100 truncate w-60 md:w-96">
                       {url.originalUrl}
                     </p>
                     <Link
                       href={url.shortUrl}
                       target="_blank"
-                      className="text-purple-400 hover:text-purple-300 text-base mt-1 inline-flex items-center"
+                      className="text-purple-300 hover:underline text-base font-medium md:text-lg mt-1 inline-flex items-center"
                     >
                       {url.shortUrl}
                     </Link>
@@ -50,7 +50,7 @@ export default function SavedUrls() {
                     />
                   </div>
                 </div>
-                <p className="text-xs text-gray-500 mt-2">
+                <p className="mt-10 text-sm text-gray-300 sm:mt-2">
                   Creado el {new Date(url.createdAt).toLocaleDateString()}
                 </p>
               </li>
