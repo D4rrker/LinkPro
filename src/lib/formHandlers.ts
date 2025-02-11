@@ -68,6 +68,7 @@ export const handleSubmit = async ({
 
     setErrorMSG({
       boolean: true,
+      isError: true,
       msg: error instanceof Error ? error.message : "Error desconocido",
     });
   } finally {
