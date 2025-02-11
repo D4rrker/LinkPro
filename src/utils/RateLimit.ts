@@ -8,6 +8,7 @@ export const handleRateLimitError = async (
   const errorData: TooManyRequestType = await response.json();
   setErrorMSG({
     boolean: true,
+    isError: true,
     msg: `${errorData.error}`,
     retryAfter: errorData.retryAfter,
   });

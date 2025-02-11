@@ -44,6 +44,7 @@ export const handleSubmit = async ({
 
     if (validation === "rate_limit") {
       await handleRateLimitError(response, setErrorMSG);
+      return;
     }
 
     const { short_id } = validation;
