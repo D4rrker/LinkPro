@@ -1,5 +1,4 @@
 import { notFound, redirect } from "next/navigation";
-import { generateFakeShortId } from "@/lib/formHandlers";
 
 export const shortenUrl = async (url: string) => {
   const body = {
@@ -7,7 +6,7 @@ export const shortenUrl = async (url: string) => {
   };
 
   try {
-    const response = await fetch("http://localhost:1234/shorten", {
+    const response = await fetch("https://api.linkpro.li/shorten", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +21,6 @@ export const shortenUrl = async (url: string) => {
 };
 
 export const getOriginalUrl = async (urlParam: string) => {
-
   if (urlParam === "favicon.ico") return;
 
   if (urlParam === "robots.txt") return;
@@ -32,28 +30,15 @@ export const getOriginalUrl = async (urlParam: string) => {
     notFound();
   }
 
-  const URL = `http://localhost:1234/${urlParam}`;
+  const URL = `https://api.linkpro.li/${urlParam}`;
 
   const res = await fetch(URL);
 
   console.log(res);
-  
 
   if (!res.ok) notFound();
 
   const data = await res.json();
 
   redirect(data.original_url);
-};
-
-export const fakeFetch = async () => {
-  const short_id = generateFakeShortId();
-
-  const fakefetch = new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({ data: "Respuesta simulada", short_id, status: 200 });
-    }, 500);
-  });
-
-  return fakefetch;
 };
