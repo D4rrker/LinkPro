@@ -7,8 +7,6 @@ export default function Form({
   isLoading,
   errorMSG,
 }: FormPropsType) {
-  console.log(errorMSG.isError);
-
   return (
     <form onSubmit={handleSubmit} className="space-y-4" id="form">
       <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
@@ -22,9 +20,7 @@ export default function Form({
             className="w-full px-3 py-2 rounded-md border text-base font-medium bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-500"
           />
           {errorMSG.boolean && (
-            <span
-              className={`text-sm font-thin w-min ${errorMSG.isError ? "text-red-500" : "text-green-500"}`}
-            >
+            <span className={`text-sm font-thin w-min text-red-500`}>
               {errorMSG.msg}
             </span>
           )}
