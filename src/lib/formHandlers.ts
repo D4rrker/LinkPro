@@ -48,7 +48,7 @@ export const handleSubmit = async ({
 
     const { short_id } = validation;
 
-    const shortUrl = `http://localhost:3000/${short_id}`;
+    const shortUrl = `https://linkpro.li/${short_id}`;
 
     setShortUrl(shortUrl);
     addUrl({
