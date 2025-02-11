@@ -5,5 +5,5 @@ export interface FormPropsType {
   url: string;
   setUrl: React.Dispatch<React.SetStateAction<string>>;
   isLoading: boolean;
-  errorMSG: ToastTooManyRequestsType;
+  infoMSG: ToastTooManyRequestsType;
 }

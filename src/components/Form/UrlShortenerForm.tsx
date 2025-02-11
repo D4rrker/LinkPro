@@ -45,7 +45,7 @@ export default function UrlShortenerForm() {
           url={url}
           setUrl={setUrl}
           isLoading={isLoading}
-          errorMSG={errorMSG}
+          infoMSG={errorMSG}
         />
 
         {shortUrl && (

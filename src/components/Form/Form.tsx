@@ -5,7 +5,7 @@ export default function Form({
   url,
   setUrl,
   isLoading,
-  errorMSG,
+  infoMSG,
 }: FormPropsType) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4" id="form">
@@ -19,20 +19,22 @@ export default function Form({
             required
             className="w-full px-3 py-2 rounded-md border text-base font-medium bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-500"
           />
-          {errorMSG.boolean && (
-            <span className={`text-sm font-thin w-min text-red-500`}>
-              {errorMSG.msg}
+          {infoMSG.boolean && (
+            <span
+              className={`text-sm font-thin w-min ${infoMSG.isError ? "text-red-500" : "text-green-500"}`}
+            >
+              {infoMSG.msg}
             </span>
           )}
         </div>
         <button
           type="submit"
           className={`px-4 py-2 min-w-max h-min rounded-md border border-transparent font-semibold bg-purple-600  text-white ${
-            isLoading || errorMSG.isError
+            isLoading || infoMSG.isError
               ? "cursor-not-allowed opacity-75"
               : "hover:bg-purple-700"
           }`}
-          disabled={isLoading || errorMSG.isError}
+          disabled={isLoading || infoMSG.isError}
         >
           {isLoading ? "Acortando..." : "Acortar URL"}
         </button>

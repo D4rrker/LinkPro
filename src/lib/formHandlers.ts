@@ -57,6 +57,11 @@ export const handleSubmit = async ({
       shortUrl,
       createdAt: new Date(),
     });
+    setErrorMSG({
+      boolean: true,
+      isError: false,
+      msg: "¡La URL se acortó correctamente!",
+    });
   } catch (error) {
     console.error("❌ Error en handleSubmit:", error);
 

@@ -49,9 +49,6 @@ export default function Response({
           />
         </div>
       )}
-      <p className="text-xs text-gray-400 mt-6 md:mt-2">
-        Este enlace acortado caducará en 30 días.
-      </p>
     </div>
   );
 }
