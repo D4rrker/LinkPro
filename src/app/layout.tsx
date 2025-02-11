@@ -5,6 +5,7 @@ import Footer from "@/components/Footer/Footer";
 import { ToastProvider } from "@/context/ToastContext";
 import Toast from "@/components/common/Toast";
 import { SavedUrlsProvider } from "@/context/UrlsContext";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "LinkPro",
@@ -31,6 +32,7 @@ export default function RootLayout({
           <SavedUrlsProvider>{children}</SavedUrlsProvider>
           <Footer />
         </ToastProvider>
+        <Analytics />
       </body>
     </html>
   );
