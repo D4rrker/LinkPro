@@ -3,9 +3,9 @@ import FeatureType from "@/types/Feature";
 
 export const features: FeatureType[] = [
   {
-    name: "Seguro y confiable",
+    name: "Privacidad y control",
     description:
-      "Todos los enlaces son escaneados en busca de malware y phishing.",
+      "Tus enlaces son gestionados con total seguridad, garantizando tu privacidad.",
     icon: Shield,
   },
   {
