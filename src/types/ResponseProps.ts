@@ -5,7 +5,7 @@ export interface ResponsePropsType {
   showToast: (
     message: string,
     type: "success" | "error" | "info",
-    copyShortUrl?: string,
+    title: string
   ) => void;
   showQR: boolean;
   setShowQR: React.Dispatch<React.SetStateAction<boolean>>;
@@ -15,7 +15,7 @@ export interface ResponsePropsType {
     showToast: (
       message: string,
       type: "success" | "error" | "info",
-      copyShortUrl?: string,
+      title: string
     ) => void;
   }) => void;
   toggleQRCode: (props: {

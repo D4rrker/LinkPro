@@ -17,9 +17,9 @@ export const copyToClipboard = ({
 }) => {
   navigator.clipboard.writeText(shortUrl);
   showToast(
-    `Se ha copiado la siguiente URL al portapapeles:`,
+    "Se ha copiado el enlace acortado al portapapeles.",
     "success",
-    `${shortUrl}`
+    `Enlace acortado copiado`
   );
 };
 
