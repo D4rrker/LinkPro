@@ -1,5 +1,4 @@
 import Features from "@/components/Features/Features";
-import SavedUrls from "@/components/SavedUrls/SavedUrls";
 import UrlShortenerForm from "@/components/Form/UrlShortenerForm";
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
         <UrlShortenerForm />
         <div className="my-20"></div>
         <Features />
-        <SavedUrls />
       </main>
     </div>
   );
