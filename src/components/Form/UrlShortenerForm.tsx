@@ -13,6 +13,7 @@ import { useToast } from "@/context/ToastContext";
 import { useSavedUrls } from "@/context/UrlsContext";
 import Form from "./Form";
 import Response from "./Response";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function UrlShortenerForm() {
   /* Mejorable, usar un solo 'useState' */
@@ -47,20 +48,28 @@ export default function UrlShortenerForm() {
           isLoading={isLoading}
           infoMSG={errorMSG}
         />
-
-        {shortUrl && (
-          <Response
-            shortUrl={shortUrl}
-            showToast={showToast}
-            showQR={showQR}
-            setShowQR={setShowQR}
-            toast={toast}
-            copyToClipboard={copyToClipboard}
-            toggleQRCode={toggleQRCode}
-            ClipboardCopy={ClipboardCopy}
-            QrCode={QrCode}
-          />
-        )}
+        <AnimatePresence>
+          {shortUrl && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <Response
+                shortUrl={shortUrl}
+                showToast={showToast}
+                showQR={showQR}
+                setShowQR={setShowQR}
+                toast={toast}
+                copyToClipboard={copyToClipboard}
+                toggleQRCode={toggleQRCode}
+                ClipboardCopy={ClipboardCopy}
+                QrCode={QrCode}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
