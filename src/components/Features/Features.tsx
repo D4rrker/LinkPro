@@ -12,8 +12,7 @@ export default function Features() {
             Una mejor manera de acortar tus URLs
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-400 lg:mx-auto">
-            LinkPro ofrece una solución completa para la gestión de tus enlaces
-            cortos.
+            LinkPro hace que acortar enlaces sea fácil y sin complicaciones.
           </p>
         </div>
 
