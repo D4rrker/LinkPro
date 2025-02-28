@@ -1,7 +1,7 @@
 export interface ToastType {
   message: string;
   type: "success" | "error" | "info";
-  copyShortUrl?: string;
+  title: string;
 }
 
 export interface ToastContextType {
@@ -9,7 +9,7 @@ export interface ToastContextType {
   showToast: (
     message: string,
     type: "success" | "error" | "info",
-    copyShortUrl?: string,
+    title: string
   ) => void;
   hideToast: () => void;
 }

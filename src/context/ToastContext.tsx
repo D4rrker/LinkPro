@@ -11,10 +11,12 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
   const showToast = (
     message: string,
     type: "success" | "error" | "info",
-    copyShortUrl?: string,
+    title: string
   ) => {
-    setToast({ message, type, copyShortUrl });
-    setTimeout(() => setToast(null), 8000);
+    setToast({ message, type, title });
+    const timeId = setTimeout(() => setToast(null), 5000);
+
+    return () => clearTimeout(timeId);
   };
 
   const hideToast = () => setToast(null);

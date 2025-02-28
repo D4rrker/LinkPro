@@ -1,7 +1,6 @@
 "use client";
 
 import { useToast } from "@/context/ToastContext";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function ToastError() {
@@ -11,31 +10,25 @@ export default function ToastError() {
   useEffect(() => {
     if (toast) {
       setVisible(true);
-      const timer = setTimeout(() => setVisible(false), 7500);
+      const timer = setTimeout(() => setVisible(false), 4500);
       return () => clearTimeout(timer);
     }
   }, [toast]);
 
   if (!toast) return;
   const toastClassName =
-    toast?.type !== "error" ? "bg-gray-900" : "bg-gray-100 text-black";
+    toast?.type !== "error"
+      ? "bg-gray-200 text-gray-900"
+      : "bg-gray-100 text-black";
 
   return (
     <div
-      className={`fixed z-50 bottom-0 right-2 flex items-center gap-x-2 px-5 py-3 rounded-md text-sm ml-2 sm:ml-0 lg:text-base font-thin border border-white/20 transition-transform ease-linear duration-300 ${
+      className={`fixed z-50 bottom-0 right-2 flex flex-col px-5 py-3 rounded-md text-sm ml-2 sm:ml-0 lg:text-base font-thin border border-white/20 transition-transform ease-linear duration-300 ${
         visible ? "translate-y-0 bottom-2" : "translate-y-full"
-      } ${toastClassName}`}
+      } ${toastClassName} max-w-md`}
     >
-      <span className="text-gray-200">
-        {toast?.message}{" "}
-        <Link
-          href={toast?.copyShortUrl || ""}
-          className="text-purple-400 hover:underline"
-          target="_blank"
-        >
-          <b>{toast?.copyShortUrl}</b>
-        </Link>
-      </span>
+      <h1 className="text-base text-pretty font-medium">{toast?.title}</h1>
+      <p className="text-base text-pretty">{toast?.message}</p>
     </div>
   );
 }
