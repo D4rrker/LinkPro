@@ -29,6 +29,8 @@ export default function Form({
         </div>
         <button
           type="submit"
+          title="Acortar URL"
+          aria-label="Acortar URL"
           className={`px-4 py-2 min-w-max h-min rounded-md border border-transparent font-semibold bg-purple-600  text-white ${
             isLoading || infoMSG.isError
               ? "cursor-not-allowed opacity-75"
