@@ -1,17 +1,16 @@
-import { Shield, Folder, QrCode } from "lucide-react";
+import { QrCode, Rocket, Zap } from "lucide-react";
 import FeatureType from "@/types/Feature";
 
 export const features: FeatureType[] = [
   {
-    name: "Privacidad y control",
-    description:
-      "Tus enlaces son gestionados con total seguridad, garantizando tu privacidad.",
-    icon: Shield,
+    name: "Rápido y Eficiente",
+    description: "Acorta y comparte enlaces en cuestión de segundos.",
+    icon: Zap,
   },
   {
-    name: "Gestión sencilla",
-    description: "Administra tus enlaces de manera fácil y rápida.",
-    icon: Folder,
+    name: "Sin Registro Necesario",
+    description: "Utiliza la herramienta sin necesidad de crear una cuenta.",
+    icon: Rocket,
   },
   {
     name: "Generación de códigos QR",
