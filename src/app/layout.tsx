@@ -8,9 +8,9 @@ import { SavedUrlsProvider } from "@/context/UrlsContext";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "LinkPro",
+  title: "Acortador de enlaces gratuito | LinkPro",
   description:
-    "Convierte enlaces largos en URLs cortas y fáciles de compartir con nuestro acortador de enlaces. Protege a los usuarios con detección de enlaces maliciosos y mejora la experiencia de navegación. ¡Prueba ahora!",
+    "Acorta enlaces largos en segundos con LinkPro. Genera URLs cortas y un código QR para un acceso rápido y fácil desde cualquier dispositivo.",
   icons: {
     icon: "/favicon.ico",
   },
